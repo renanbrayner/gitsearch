@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -6,6 +6,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import ReactDOM from "react-dom";
 
 /* Components */
 import Header from "./components/Header/Header";
@@ -23,8 +24,20 @@ function App() {
   const [userInput,setUserInput] = useState('');
   const [error,setRrror] = useState(null);
 
+  // SOMBRA DO MOUSE
+
+    // let cursor = ReactDOM.findDOMNode(cursor);
+    // document.addEventListener('mousemove',function(e) {
+    //   let x = e.clientX;
+    //   let y = e.clientY;
+    //   cursor.style.left = x + "px";
+    //   cursor.style.top = y + "px";
+    // });
+
+
   return (
     <div className="app">
+      <div className="cursor"></div>
       <Header />
       <Form />
       <Card />

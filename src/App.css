@@ -1,3 +1,10 @@
-.app {
-
+#cursor {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    background-color: red;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    
 }
