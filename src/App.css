@@ -1,0 +1,21 @@
+nav {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  background: red;
+  height:80px;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin: 20px;
+}
+
+nav p {
+  margin: 20px;
+}
+
+nav ul {
+  display: flex;
+  position: relative;
+}
+
