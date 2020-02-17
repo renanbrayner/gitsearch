@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -7,41 +7,28 @@ import {
   Link
 } from "react-router-dom";
 
-function App() {
-  return (
-    <Router>
-      <div>
-        <nav>
-          <p>GitSearch</p>
-          <div className="spacer"/>
-          <ul>
-            <li>
-              <Link to="/" exact>Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
-        </nav>
+/* Components */
+import Header from "./components/Header/Header";
+import Form from "./components/Form/Form";
+import Card from "./components/Card/Card";
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
-        <Switch>
-          <Route path="/about">
-            {/* <About /> */}
-          </Route>
-          <Route path="/users">
-            {/* <Users /> */}
-          </Route>
-          <Route path="/">
-            {/* <Home /> */}
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+
+function App() {
+  const [name,setName] = useState('');
+  const [userName,setUserName] = useState('');
+  const [followers,setFollowers] = useState('');
+  const [following,setFollowing] = useState('');
+  const [repos,setRepos] = useState('');
+  const [avatar,setAvatar] = useState('');
+  const [userInput,setUserInput] = useState('');
+  const [error,setRrror] = useState(null);
+
+  return (
+    <div className="app">
+      <Header />
+      <Form />
+      <Card />
+    </div>
   );
 }
 

@@ -1,0 +1,19 @@
+header {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(235, 235, 235);
+    height:9vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    margin: 20px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgb(255, 255, 255);
+  }
+  
+  header h1 {
+    line-height: 0;
+    margin: auto 40px;
+    font-size: 2vw;
+  }

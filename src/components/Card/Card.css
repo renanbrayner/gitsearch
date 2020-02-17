@@ -1,0 +1,33 @@
+.card {
+    background-color: rgb(235, 235, 235);
+    width: 23vw;
+    padding: 1vw;
+    margin: 20vh auto;
+    margin-top: 20px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3), -3px -3px 5px rgb(255, 255, 255);
+}
+
+.profile-img {
+    height: 23vw;
+    width: 23vw;
+    background-color: blue;
+}
+
+.card h2 {
+    margin: 8px 0;
+}
+
+.card p {
+    margin-top: 0;
+    background-color: blue;
+    border-radius: 20px;
+    padding: 5px;
+    padding-left: 20px;
+}
+
+.last-p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
