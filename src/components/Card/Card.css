@@ -3,7 +3,8 @@
     width: 25vw;
     min-width: 318px;
     padding: 1vw;
-    margin: 20vh auto;
+    margin: 0 auto;
+    margin-bottom: 20px;
     margin-top: 20px;
     border-bottom-left-radius: 25px;
     border-bottom-right-radius: 25px;
@@ -27,7 +28,8 @@
     margin: 0 auto;
     min-height: 290px;
     min-width: 290px;
-    background-color: blue;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .card h2 {
@@ -47,4 +49,20 @@
 .last-p {
     margin-bottom: 0;
     padding-bottom: 0;
+}
+
+.profile-link {
+    margin-top: 15px;
+    color: black;
+    transition: letter-spacing 1s;
+}
+
+.profile-link:hover {
+    letter-spacing: 1px;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

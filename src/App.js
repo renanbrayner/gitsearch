@@ -22,25 +22,68 @@ function App() {
   const [repos,setRepos] = useState('');
   const [avatar,setAvatar] = useState('');
   const [userInput,setUserInput] = useState('');
-  const [error,setRrror] = useState(null);
+  const [error,setError] = useState(null);
 
-  // SOMBRA DO MOUSE
+  useEffect(() => {
+    fetch("https://api.github.com/users/example")
+      .then(res => res.json())
+      .then(data =>{
+        setData(data)
+      })
+  },[]);  
 
-    // let cursor = ReactDOM.findDOMNode(cursor);
-    // document.addEventListener('mousemove',function(e) {
-    //   let x = e.clientX;
-    //   let y = e.clientY;
-    //   cursor.style.left = x + "px";
-    //   cursor.style.top = y + "px";
-    // });
+  const setData = ({ 
+    name, 
+    login, 
+    followers, 
+    following, 
+    public_repos, 
+    avatar_url
+  }) => {
+    setName(name);
+    setUserName(login);
+    setFollowers(followers);
+    setFollowing(following);
+    setRepos(public_repos);
+    setAvatar(avatar_url);
+  }
 
+  const handleSearch = (e) => {
+    setUserInput(e.target.value)
+  }
+
+  const handleSubmit = () => {
+    fetch(`https://api.github.com/users/${userInput}`)
+      .then(res => res.json())
+      .then(data => {
+        if (data.message) {
+          setError("Não encontrado")
+          console.log(data.message)
+        } else {
+          setData(data);
+          setError(null)
+        }
+      })
+  }
 
   return (
     <div className="app">
       <div className="cursor"></div>
       <Header />
-      <Form />
-      <Card />
+      <Form 
+        handleSearch={handleSearch}
+        handleSubmit={handleSubmit}
+      />
+      { error ? (<h1 className="error">{error}</h1>) : (
+              <Card
+              name = {name}
+              login = {userName}
+              followers = {followers}
+              following = {following}
+              repos = {repos}
+              avatar = {avatar}
+            />
+       ) }
     </div>
   );
 }

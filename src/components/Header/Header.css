@@ -1,5 +1,5 @@
 header {
-    position: fixed;
+    position: absolute;
     display: flex;
     flex-direction: row;
     background-color: rgb(235, 235, 235);
@@ -22,5 +22,5 @@ header {
   header h1 {
     line-height: 0;
     margin: auto 40px;
-    font-size: 2vw;
+    font-size: 1.5rem;
   }
