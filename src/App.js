@@ -60,6 +60,13 @@ function App() {
       })
   }
 
+  // Fazer enter dar submit
+  const handleKeyPress = (event) => {
+    if(event.key === 'Enter'){
+      handleSubmit()
+    }
+  }
+
   return (
     <div className="app">
       <div className="cursor"></div>
@@ -67,6 +74,7 @@ function App() {
       <Form 
         handleSearch={handleSearch}
         handleSubmit={handleSubmit}
+        handleKeyPress={handleKeyPress}
       />
       { error ? (<h1 className="error">{error}</h1>) : (
               <Card
